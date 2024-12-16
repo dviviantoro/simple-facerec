@@ -1,5 +1,6 @@
 import os
 import cv2
+import time
 from deepface import DeepFace
 from dotenv import load_dotenv
 load_dotenv()
@@ -40,5 +41,8 @@ def crop_face():
                 cv2.imwrite(output_filename, cropped_face)
         except Exception as e:
             print(e)
+
+start_time = time.time()
 create_dir()
 crop_face()
+print("--- %s seconds ---" % (time.time() - start_time))
