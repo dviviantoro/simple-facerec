@@ -2,3 +2,4 @@
 temp
 archive
 .env
+.DS_Store
