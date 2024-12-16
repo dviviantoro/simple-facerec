@@ -1,0 +1,14 @@
+ada aplikasi:
+0. scheduling frame caputer
+1. frame capturer
+2. face cropper
+3. clusterer
+4. analyzer
+
+step by step
+bikin folder baru
+1. frame tercapture, dikasih timestamp. filename = frame_n
+2. echo untuk crop muka. filename = fr001_001
+3. clustering setiap muka, buat folder setiap cluster
+4. analyze setiap folder, buat dominasi
+5. push to influxdb
