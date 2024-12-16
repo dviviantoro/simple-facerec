@@ -3,10 +3,13 @@ import time
 from datetime import datetime
 import os
 import json
+from dotenv import load_dotenv
+load_dotenv()
+cwd = os.getenv('CWD')
 
-video_path = '/Users/deny/optimized-facerec/assets/marathon.mp4'
-archive_path = '/Users/deny/optimized-facerec/archive/raw/'
-timedef = "/Users/deny/optimized-facerec/assets/timedef.json"
+video_path = f'{cwd}/assets/marathon.mp4'
+archive_path = f'{cwd}/archive/raw/'
+timedef = f"{cwd}/assets/timedef.json"
 cap = cv2.VideoCapture(video_path)
 
 # Check if the video was opened successfully
@@ -45,7 +48,7 @@ def dir_path():
             my_id = i["id"]
             now = datetime.now()
             current_date = now.strftime("%Y-%m-%d")
-            target_dir = f"/Users/deny/optimized-facerec/archive/{current_date}id{my_id}"
+            target_dir = f"{cwd}/archive/{current_date}id{my_id}"
             try:
                 os.makedirs(target_dir)
             except Exception as e:

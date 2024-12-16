@@ -1,8 +1,11 @@
 import os
 import cv2
 from deepface import DeepFace
+from dotenv import load_dotenv
+load_dotenv()
+cwd = os.getenv('CWD')
 
-folder_path = "/Users/deny/optimized-facerec/archive/2024-12-15id454"
+folder_path = f"{cwd}/archive/2024-12-15id454"
 backend = ['opencv', 'retinaface', 'mtcnn', 'ssd', 'dlib', 'mediapipe', 'yolov8', 'centerface']
 
 def create_dir():
