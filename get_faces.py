@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 cwd = os.getenv('CWD')
 
-folder_path = f"{cwd}/archive/2024-12-15id454"
+folder_path = f"{cwd}/archive/2024-12-16id374"
 backend = ['opencv', 'retinaface', 'mtcnn', 'ssd', 'dlib', 'mediapipe', 'yolov8', 'centerface']
 
 def create_dir():
@@ -25,7 +25,7 @@ def crop_face():
     for i in file_list:
         print(i)
         try:
-            faces = DeepFace.extract_faces(i, detector_backend = backend[7], align= True)
+            faces = DeepFace.extract_faces(i, detector_backend = backend[1], align= True)
             img = cv2.imread(i)
 
             for j in faces:
